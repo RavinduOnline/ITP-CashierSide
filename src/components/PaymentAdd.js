@@ -82,7 +82,7 @@ export default class CreatePayment extends Component {
         console.log(Payment);
 
         axios
-            .post("/payment/add", Payment)
+            .post(`${process.env.REACT_APP_BACKEND}/payment/add`, Payment)
             .then((res) => console.log(res.data));
 
         window.location = "/Payments/";

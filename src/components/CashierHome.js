@@ -56,7 +56,7 @@ export default class CashierHome extends Component {
   
     //create  method for retrieving data
     retrievePost(){
-      axios.get("/FoodItems/get").then(res => {
+      axios.get(`${process.env.REACT_APP_BACKEND}/FoodItems/get`).then(res => {
         if(res.data.success){                        // <--------------- you can see success in get method of backend > routes > posts.js, go and see it!, in that point we code success=true, thats mean in here we call success and backend take it as true, then we can retrive data from backend//
 
           this.setState({
@@ -79,7 +79,7 @@ export default class CashierHome extends Component {
             //------------------------ Harshana Rajapaksha - Discount Check
 
         retrievePosts(){
-            axios.get("/discounts").then(res =>{
+            axios.get(`${process.env.REACT_APP_BACKEND}/discounts`).then(res =>{
             if(res.data.success){
                 this.setState({
                 posts:res.data.existingPosts
@@ -119,7 +119,7 @@ export default class CashierHome extends Component {
   
       const searchKey = e.currentTarget.value;
   
-      axios.get("/FoodItems/get").then(res => {
+      axios.get(`${process.env.REACT_APP_BACKEND}/FoodItems/get`).then(res => {
           if(res.data.success){                        // <--------------- you can see success in get method of backend > routes > posts.js, go and see it!, in that point we code success=true, thats mean in here we call success and backend take it as true, then we can retrive data from backend//
     
             this.filterData(res.data.existingPosts,searchKey)
@@ -167,7 +167,7 @@ export default class CashierHome extends Component {
 
             console.log(data)
 
-            axios.post("/cart/save",data).then((res) =>{
+            axios.post(`${process.env.REACT_APP_BACKEND}/cart/save`,data).then((res) =>{
               if(res.data.success){
                 window.location.replace('/Payment/add/');
 

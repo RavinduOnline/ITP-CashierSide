@@ -4,7 +4,7 @@ import CashierHome from './components/CashierHome';
 import CashierFooter from './components/CashierFooter';
 // import CategoryBar from './components/CategoryBar';
 import CustomerCreate from './components/CustomerCreate';
-import PaymentAdd from "../../frontend_cashier/src/components/PaymentAdd";
+import PaymentAdd from "./components/PaymentAdd";
 
 
 export default class App extends Component {                     // <--------------this APP class we extends using Component class

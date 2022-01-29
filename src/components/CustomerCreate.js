@@ -139,7 +139,7 @@ let JoinDatelenth = JoinDate.length;
          
   else{
 
-    axios.post("/customer/save",data).then((res) =>{
+    axios.post(`${process.env.REACT_APP_BACKEND}/customer/save`,data).then((res) =>{
       if(res.data.success){
         toast.success("Customer Successfully Added",{
 
